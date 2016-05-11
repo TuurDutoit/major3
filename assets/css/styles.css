@@ -1,0 +1,579 @@
+
+/*
+ * FONTS / ANIMATIONS
+ */
+
+
+@font-face {
+  font-family: "Misfits";
+  src: url("../fonts/misfits/Misfits.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arvo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/arvo/Arvo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arvo";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/arvo/Arvo-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Arvo";
+  font-weight: bold;
+  font-style: italic;
+  src: url("../fonts/arvo/Arvo-BoldItalic.ttf") format("truetype");
+}
+
+@keyframes sign-swing {
+  0% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(-12deg);
+  }
+}
+
+
+
+
+/*
+ * COMMON
+ */
+
+
+html, body, main {
+  width: 100%;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: Arvo;
+  color: white;
+}
+
+main {
+  background: #1b1b1b;
+}
+
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.numeral {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  line-height: 80px;
+  font-size: 4em;
+  font-weight: bold;
+  color: #1b1b1b;
+}
+
+.food .numeral,
+.murder .numeral,
+.wafer .numeral {
+  margin-right: 30px;
+}
+
+.section-title {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.article-title {
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+.content {
+  font-size: 1.6em;
+  line-height: 1.2em;
+}
+
+
+
+
+
+/*
+ * RATINGS
+ */
+
+
+ .rating {
+   width: 100%;
+   margin-top: 13px;
+   margin-bottom: 35px;
+ }
+
+ .rating .heart {
+   display: inline-block;
+   height: 16px;
+   margin-right: 4px;
+ }
+
+ .rating .empty {
+   width: 18px;
+   background-image: url("../img/heart-empty.png");
+ }
+
+ .rating .half {
+   width: 18px;
+   background-image: url("../img/heart-half.png");
+ }
+
+ .rating .full {
+   width: 17px;
+   background-image: url("../img/heart-full.png");
+ }
+
+
+
+
+
+/*
+ * VOTING
+ */
+
+
+.vote {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  bottom: -25px;
+  left: -25px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 5px;
+}
+
+.vote .button {
+  padding: 13px 20px;
+  background-color: #ec0000;
+  box-shadow: 0 0 13px 5px #1b1b1b;
+  border: none;
+  border-radius: 10px;
+  font-family: Arvo;
+  font-size: 3.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow .2s;
+}
+
+.vote .button:hover {
+  box-shadow: 0 0 5px 2px #1b1b1b;
+}
+
+.vote .details {
+  margin-top: 10px;
+  font-size: 1.4em;
+}
+
+article {
+  position: relative;
+}
+
+article:hover .article {
+  -webkit-filter: blur(4px);
+}
+
+article:hover .vote {
+  display: flex;
+}
+
+
+
+
+
+/*
+ * HOME
+ */
+
+
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/fog.png");
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.home img,
+.home header,
+.home .grass,
+.home .gradient {
+  position: absolute;
+}
+
+.home .container {
+  height: 100%;
+}
+
+.home header {
+  bottom: 190px;
+  left: 150px;
+  font-family: "Misfits";
+  text-shadow: 0 0 60px black;
+}
+
+.home h1 {
+  font-size: 12em;
+}
+
+.home .sign {
+  top: -10px;
+  left: 0;
+  transform-origin: 50% top;
+  animation: 2s ease-in-out 0s infinite alternate sign-swing;
+}
+
+.home .grave {
+  bottom: 100px;
+  left: -40px;
+}
+
+.home .tree {
+  bottom: 100px;
+  right: -230px;
+}
+
+.home .grass {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 154px;
+  background-image: url("../img/grass.png");
+}
+
+.home .molehill {
+  position: static;
+}
+
+.home .rat {
+  left: 50%;
+  margin-left: -6px;
+  bottom: -70px;
+  transition: bottom 2s ease-in-out;
+}
+
+.home .rat.up {
+  bottom: 90px;
+}
+
+.home .gradient {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background-image: linear-gradient(to bottom, rgba(27, 27, 27, 0), rgba(27,27,27,1));
+}
+
+
+
+
+
+/*
+ * 1. MUSIC
+ */
+
+
+.music {
+  margin-top: 100px;
+}
+
+.music .numeral {
+  position: absolute;
+  left: -130px;
+}
+
+.music .notes {
+  margin-top: 4px;
+}
+
+.music .article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.music .karaoke {
+  margin-left: 145px;
+}
+
+.music .body {
+  width: 550px;
+}
+
+.music .mariachi .body {
+  margin-left: 35px;
+}
+
+.music .karaoke .body {
+  margin-left: 55px;
+}
+
+.music .section-title .part-1 {
+  margin-left: 90px;
+}
+
+.music .section-title .part-2 {
+  margin-left: 105px;
+}
+
+.music .section-title .part-3 {
+  margin-left:40px;
+}
+
+.music .section-title .part-4 {
+  margin-left: 132px;
+}
+
+.music .section-title .part-5 {
+  margin-left: 115px;
+}
+
+.music .section-title .part-6 {
+  margin-left: 35px;
+}
+
+.music .section-title .part-7 {
+  margin-left: 25px;
+}
+
+
+
+
+
+
+/*
+ * 2. FOOD
+ */
+
+
+
+.food  {
+  margin-top: 150px;
+  background-image: url("../img/food-bg.jpg");
+  background-size: cover;
+  background-position: center top;
+  overflow: auto;
+  color: #1b1b1b;
+}
+
+.food .stripes {
+  height: 45px;
+  background-image: url("../img/stripes.png");
+}
+
+.food .section-header {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.food .biohazard {
+  width: 100%;
+  margin: 30px 0 70px;
+  text-align: center;
+}
+
+.food .articles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 90px;
+}
+
+.food .article {
+  width: 430px;
+}
+
+
+
+
+
+
+/*
+ * 3. WALK
+ */
+
+
+
+.walk {
+  margin-top: 100px;
+}
+
+.walk .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.walk .numeral {
+  margin-bottom: 40px;
+}
+
+.walk .section-title {
+  width: 410px;
+  line-height: 1.2em;
+}
+
+.walk .article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.walk .article .text {
+  width: 390px;
+}
+
+.walk .smell header {
+  text-align: right;
+}
+
+.walk em {
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+/*
+ * 4. MURDER
+ */
+
+
+
+.murder {
+  max-width: 1224px;
+  min-width: 960px;
+  height: 964px;
+  margin: 0 auto;
+  padding-top: 100px;
+  background-image: url("../img/fog.jpg");
+  background-size: 1224px 964px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.murder .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.murder .section-header {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.murder article {
+  width: 625px;
+}
+
+.murder .speech {
+  align-self: flex-end;
+}
+
+.murder .hands {
+  display: flex;
+  justify-content: space-between;
+}
+
+.murder .pointing {
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.murder .thumbs-up {
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+/*
+ * 5. WAFER
+ */
+
+
+
+.wafer {
+  margin-top: 150px;
+  padding-bottom: 100px;
+}
+
+.wafer .section-header {
+  position: relative;
+  height: 255px;
+  margin-bottom: 80px;
+}
+
+.wafer .section-header img,
+.wafer .section-header h1 {
+  position: absolute;
+}
+
+.wafer .section-header .mouth {
+  left: 390px;
+}
+
+.wafer .section-header .bacteria {
+  bottom: 0;
+  left: 50px;
+}
+
+.wafer .section-header .toothpick {
+  left: 575px;
+  top: 60px;
+  transform: rotate(-40deg);
+}
+
+.wafer .section-header h1 {
+  left: 445px;
+  top: 18px;
+  transform: rotate(-10deg);
+}
+
+.wafer .articles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wafer .article {
+  width: 445px;
+}
